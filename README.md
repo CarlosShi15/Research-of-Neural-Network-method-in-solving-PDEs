@@ -11,9 +11,9 @@ The project explores TransNet’s numerical behavior, scalability, and extension
 
 **TransNet** represents the solution of a PDE as a linear combination of *analytic basis functions*:
 
-\[
+$$
 u(x) = \sum_{m=1}^M \alpha_m \, \psi_m(x; r_m, \gamma),
-\]
+$$
 
 where  
 - \( \psi_m \) are differentiable basis functions (e.g., Gaussian, tanh, sinusoidal),  
