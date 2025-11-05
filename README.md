@@ -16,10 +16,10 @@ u(x) = \sum_{m=1}^M \alpha_m \, \psi_m(x; r_m, \gamma),
 $$
 
 where  
-- $$ \psi_m $$ are differentiable basis functions (e.g., Gaussian, tanh, sinusoidal),  
-- $$ r_m $$ are centers or projection directions,  
-- $$ \gamma $$ controls the scale,  
-- $$ \alpha_m $$ are optimized coefficients.  
+- $ \psi_m $ are differentiable basis functions (e.g., Gaussian, tanh, sinusoidal),  
+- $ r_m $ are centers or projection directions,  
+- $ \gamma $ controls the scale,  
+- $ \alpha_m $ are optimized coefficients.  
 
 The parameters are obtained by minimizing the **least-squares residual functional**
 
@@ -86,9 +86,9 @@ where
 For nonlinear PDEs (e.g., with terms like \( u \nabla u \)),  
 a **Picard-type iterative scheme** was incorporated:
 
-1. Initialize $$ u^{(0)}(x) = 0 $$.  
-2. Linearize the nonlinear operator around $$ u^{(k)} $$.  
-3. Solve for $$ u^{(k+1)} $$ using the TransNet least-squares formulation.  
+1. Initialize $ u^{(0)}(x) = 0 $.  
+2. Linearize the nonlinear operator around $ u^{(k)} $.  
+3. Solve for $ u^{(k+1)} $ using the TransNet least-squares formulation.  
 4. Repeat until the residual converges.
 
 **Advantages**
