@@ -1,0 +1,45 @@
+
+---
+
+## 📊 Key Results
+
+| Experiment | Description | Observation |
+|-------------|-------------|--------------|
+| **Dimensional test** | 1-D → 2-D | Stable convergence but slower MSE decay |
+| **Baseline TransNet** | Poisson & wave equations | Correct reproduction of paper results |
+| **Hybrid-TransNet** | Skip-connected version | Lower MSE, faster ε-rank growth |
+| **Nonlinear solver** | Burgers-type PDE | Stable convergence via Picard iteration |
+
+---
+
+## 🧮 Theoretical Context
+
+This research is closely connected to  
+- the **ε-rank and Staircase Phenomenon** (Yang et al., 2024), describing rank-loss correlation;  
+- and **Least-Squares Neural Network (LSNN)** methods (Cai et al., 2022), which inspired the least-squares training formulation.
+
+Together, they form a consistent theoretical foundation linking **network rank growth**, **residual decay**, and **PDE solution accuracy**.
+
+---
+
+## 🧠 Future Work
+
+- Introduce **finite-volume or conservative operators** into TransNet (FV-TransNet).  
+- Extend to **time-dependent and multi-physics PDEs**.  
+- Analyze **rank dynamics** and convergence theoretically.  
+- Explore **block-space-time training** similar to LSNN.
+
+---
+
+## ✍️ Citation
+
+If you find this work useful, please cite:
+
+```bibtex
+@misc{transnet_research,
+  author       = {Carlos Shi},
+  title        = {TransNet Research: Analytic Basis Neural Network for PDEs},
+  year         = {2025},
+  note         = {GitHub repository},
+  url          = {https://github.com/your-repo-link-here}
+}
