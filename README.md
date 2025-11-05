@@ -16,18 +16,18 @@ u(x) = \sum_{m=1}^M \alpha_m \, \psi_m(x; r_m, \gamma),
 $$
 
 where  
-- \( \psi_m \) are differentiable basis functions (e.g., Gaussian, tanh, sinusoidal),  
-- \( r_m \) are centers or projection directions,  
-- \( \gamma \) controls the scale,  
-- \( \alpha_m \) are optimized coefficients.  
+- $ \psi_m $ are differentiable basis functions (e.g., Gaussian, tanh, sinusoidal),  
+- $ r_m $ are centers or projection directions,  
+- $ \gamma $ controls the scale,  
+- $ \alpha_m $ are optimized coefficients.  
 
 The parameters are obtained by minimizing the **least-squares residual functional**
 
-\[
+$$
 L(\alpha, \gamma)
    = \|\mathcal{N}[u_{\alpha,\gamma}]\|^2_{\Omega}
    + \lambda \|u_{\alpha,\gamma} - g\|^2_{\Gamma}.
-\]
+$$
 
 This approach is **mesh-free**, interpretable, and analytically differentiable — offering a stable and efficient alternative to traditional finite-difference or finite-element methods.
 
@@ -66,9 +66,9 @@ The baseline TransNet implementation was **faithfully reproduced** from the orig
 
 A new **Hybrid-TransNet** architecture was proposed to combine analytical structure with data-driven adaptability.
 
-\[
+$$
 u(x) = u_{\text{TransNet}}(x) + \mathcal{N}_{\text{MLP}}(x; \theta),
-\]
+$$
 
 where  
 - `TransNet` part provides smooth analytical approximation,  
@@ -88,9 +88,9 @@ where
 For nonlinear PDEs (e.g., with terms like \( u \nabla u \)),  
 a **Picard-type iterative scheme** was incorporated:
 
-1. Initialize \( u^{(0)}(x) = 0 \).  
-2. Linearize the nonlinear operator around \( u^{(k)} \).  
-3. Solve for \( u^{(k+1)} \) using the TransNet least-squares formulation.  
+1. Initialize $ u^{(0)}(x) = 0 $.  
+2. Linearize the nonlinear operator around $ u^{(k)} $.  
+3. Solve for $ u^{(k+1)} $ using the TransNet least-squares formulation.  
 4. Repeat until the residual converges.
 
 **Advantages**
